@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "#": "mekanism_extras:supreme_energy_cube",
+    "E": "mekanism:energy_tablet",
+    "P": "mekanism_extras:absolute_induction_cell"
+  },
+  "pattern": [
+    "EPE",
+    "P#P",
+    "EPE"
+  ],
+  "result": {
+    "id": "mekanism_extras:supreme_induction_cell"
+  }
+}

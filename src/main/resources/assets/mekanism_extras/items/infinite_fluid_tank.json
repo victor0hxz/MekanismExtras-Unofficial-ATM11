@@ -1,0 +1,9 @@
+{
+  "model": {
+    "model": {
+      "type": "mekanism_extras:fluid_tank"
+    },
+    "type": "minecraft:special",
+    "base": "mekanism_extras:item/infinite_fluid_tank"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": "mekanism:energy_tablet",
+    "S": "mekanism:steel_casing",
+    "P": "mekanism:induction_casing"
+  },
+  "pattern": [
+    "PSP",
+    "SES",
+    "PSP"
+  ],
+  "result": {
+    "count": 4,
+    "id": "mekanism_extras:reinforced_induction_casing"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": "#mekanism_extras:alloys/spectrum",
+    "I": "#c:storage_blocks/lead",
+    "T": "mekanism_extras:cosmic_radioactive_waste_barrel"
+  },
+  "pattern": [
+    "SIS",
+    "ITI",
+    "SIS"
+  ],
+  "result": {
+    "id": "mekanism_extras:infinite_radioactive_waste_barrel"
+  }
+}

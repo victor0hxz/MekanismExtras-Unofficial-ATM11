@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:dusts/osmium"
+  },
+  "output": {
+    "amount": 200,
+    "id": "mekanism:osmium"
+  }
+}

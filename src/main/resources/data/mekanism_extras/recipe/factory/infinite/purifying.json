@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism_extras:alloys/spectrum",
+    "C": "#c:circuits/infinite",
+    "I": "#c:pellets/plutonium",
+    "J": "#c:pellets/polonium",
+    "P": "mekanism_extras:cosmic_purifying_factory"
+  },
+  "pattern": [
+    "ACA",
+    "IPJ",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_extras:infinite_purifying_factory"
+  }
+}

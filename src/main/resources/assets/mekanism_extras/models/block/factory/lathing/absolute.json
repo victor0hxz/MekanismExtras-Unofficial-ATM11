@@ -1,0 +1,20 @@
+{
+  "loader": "neoforge:composite",
+  "parent": "block/block",
+  "textures": {
+    "particle": "mekanism:block/factory/factory_front_back",
+        "missing": "mekmm:block/factory/lathing/lathing_factory_side"
+  },
+  "children": {
+    "base": {
+      "parent": "mekmm:block/factory/lathing/base",
+      "textures": {
+        "particle": "mekanism:block/factory/factory_front_back",
+        "missing": "mekmm:block/factory/lathing/lathing_factory_side"
+      }
+    },
+    "front_led": {
+      "parent": "mekanism_extras:block/factory/front_led/absolute"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism_extras:alloys/shining",
+    "C": "#c:circuits/cosmic",
+    "I": "#c:ingots/refined_obsidian",
+    "P": "mekanism_extras:supreme_enriching_factory"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_extras:cosmic_enriching_factory"
+  }
+}

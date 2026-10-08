@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": "#mekanism_extras:alloys/radiance",
+    "E": "mekanism:energy_tablet",
+    "I": "#c:gems/emerald",
+    "P": "mekanism:ultimate_energy_cube"
+  },
+  "pattern": [
+    "AEA",
+    "IPI",
+    "AEA"
+  ],
+  "result": {
+    "id": "mekanism_extras:absolute_energy_cube"
+  }
+}

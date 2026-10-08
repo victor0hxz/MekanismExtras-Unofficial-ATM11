@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": "#mekanism_extras:alloys/spectrum",
+    "I": "#c:ingots/iron",
+    "P": "mekanism_extras:cosmic_fluid_tank"
+  },
+  "pattern": [
+    "AIA",
+    "IPI",
+    "AIA"
+  ],
+  "result": {
+    "id": "mekanism_extras:infinite_fluid_tank"
+  }
+}

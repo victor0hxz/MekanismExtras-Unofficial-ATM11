@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "#mekanism_extras:alloys/radiance",
+    "C": "#c:circuits/ultimate"
+  },
+  "pattern": [
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism_extras:absolute_control_circuit"
+  }
+}

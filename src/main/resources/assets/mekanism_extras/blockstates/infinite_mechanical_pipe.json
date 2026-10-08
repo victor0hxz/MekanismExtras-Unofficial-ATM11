@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "mekanism_extras:block/transmitter/large/mechanical_pipe/infinite",
+      "type": "mekanism:special/transmitter"
+    }
+  }
+}

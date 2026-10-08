@@ -1,0 +1,13 @@
+{
+  "model": {
+    "type": "neoforge:fluid_container",
+    "fluid": "mekanism_extras:rich_uranium_fuel",
+    "flip_gas": true,
+    "cover_is_mask": false,
+    "textures": {
+      "base": "minecraft:item/bucket",
+      "fluid": "neoforge:item/mask/bucket_fluid",
+      "particle": "minecraft:item/bucket"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "facing=up": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube",
+        "x": 270
+      },
+      "type": "mekanism:energy_cube_sided"
+    },
+    "facing=down": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube",
+        "x": 90
+      },
+      "type": "mekanism:energy_cube_sided"
+    },
+    "facing=north": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube"
+      },
+      "type": "mekanism:energy_cube_sided"
+    },
+    "facing=south": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube",
+        "y": 180
+      },
+      "type": "mekanism:energy_cube_sided"
+    },
+    "facing=east": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube",
+        "y": 90
+      },
+      "type": "mekanism:energy_cube_sided"
+    },
+    "facing=west": {
+      "tier_model": {
+        "model": "mekanism_extras:block/energy_cube",
+        "y": 270
+      },
+      "type": "mekanism:energy_cube_sided"
+    }
+  }
+}

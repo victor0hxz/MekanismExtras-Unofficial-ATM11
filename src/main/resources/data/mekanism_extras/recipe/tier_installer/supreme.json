@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "#mekanism_extras:alloys/thermonuclear",
+    "C": "#c:circuits/supreme",
+    "I": "#c:ingots/netherite",
+    "P": "#minecraft:planks"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism_extras:supreme_tier_installer"
+  }
+}

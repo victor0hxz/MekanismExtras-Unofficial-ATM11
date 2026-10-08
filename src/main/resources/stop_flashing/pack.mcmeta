@@ -1,0 +1,15 @@
+{
+  "pack": {
+    "description": {
+      "translate": "pack.mekanism_extras.pack_description"
+    },
+    "min_format": [
+      84,
+      0
+    ],
+    "max_format": [
+      84,
+      0
+    ]
+  }
+}

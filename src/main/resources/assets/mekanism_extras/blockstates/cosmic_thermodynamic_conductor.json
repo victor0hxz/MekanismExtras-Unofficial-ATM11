@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "mekanism_extras:block/transmitter/small/thermodynamic_conductor/cosmic",
+      "type": "mekanism:special/transmitter"
+    }
+  }
+}

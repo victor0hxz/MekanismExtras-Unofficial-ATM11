@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "mekanism_extras:supreme_energy_cube",
+    "C": "#c:circuits/supreme",
+    "P": "mekanism_extras:absolute_induction_provider"
+  },
+  "pattern": [
+    "CPC",
+    "P#P",
+    "CPC"
+  ],
+  "result": {
+    "id": "mekanism_extras:supreme_induction_provider"
+  }
+}

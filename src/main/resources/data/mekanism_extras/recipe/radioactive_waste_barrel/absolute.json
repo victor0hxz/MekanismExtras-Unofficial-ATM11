@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": "#mekanism_extras:alloys/radiance",
+    "I": "#c:storage_blocks/lead",
+    "T": "mekanism:radioactive_waste_barrel"
+  },
+  "pattern": [
+    "SIS",
+    "ITI",
+    "SIS"
+  ],
+  "result": {
+    "id": "mekanism_extras:absolute_radioactive_waste_barrel"
+  }
+}

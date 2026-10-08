@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": "#c:alloys/supreme",
+    "B": "minecraft:bucket",
+    "O": "#c:storage_blocks/osmium",
+    "X": "mekanism:electric_pump"
+  },
+  "pattern": [
+    "BBB",
+    "AXA",
+    "OOO"
+  ],
+  "result": {
+    "id": "mekanism_extras:advanced_electric_pump"
+  }
+}

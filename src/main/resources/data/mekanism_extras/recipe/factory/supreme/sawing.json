@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism_extras:alloys/thermonuclear",
+    "C": "#c:circuits/supreme",
+    "I": "#c:ingots/netherite",
+    "P": "mekanism_extras:absolute_sawing_factory"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_extras:supreme_sawing_factory"
+  }
+}

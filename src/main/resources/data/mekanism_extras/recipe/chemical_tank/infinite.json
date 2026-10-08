@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": "#mekanism_extras:alloys/spectrum",
+    "O": "#c:ingots/osmium",
+    "P": "mekanism_extras:cosmic_chemical_tank"
+  },
+  "pattern": [
+    "AOA",
+    "OPO",
+    "AOA"
+  ],
+  "result": {
+    "id": "mekanism_extras:infinite_chemical_tank"
+  }
+}

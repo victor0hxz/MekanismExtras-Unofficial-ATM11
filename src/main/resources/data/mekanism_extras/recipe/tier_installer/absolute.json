@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "#mekanism_extras:alloys/radiance",
+    "C": "#c:circuits/absolute",
+    "I": "#c:gems/emerald",
+    "P": "#minecraft:planks"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism_extras:absolute_tier_installer"
+  }
+}

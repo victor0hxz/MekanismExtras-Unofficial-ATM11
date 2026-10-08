@@ -1,0 +1,85 @@
+def atm11Smoke = providers.gradleProperty("atm11Smoke").isPresent()
+dependencies {
+    compileOnly(libs.jetbrains.annotations)
+    compileOnly("org.jspecify:jspecify:1.0.0")
+
+    if (!atm11Smoke) clientLocalRuntime(forge.jecharacters.get())
+
+    // Recipe Viewers
+    compileOnly(files("${rootDir}/libs/jei-26.1.2-neoforge-29.37.0.99.jar"))
+    compileOnly(forge.emi)
+//    modCompileOnly(forge.jer)
+
+    // ATM11 Mekanism 26.1.2 local version-locked modules
+    def mekanismJars = files(
+        "${rootDir}/libs/Mekanism-Version-Locked-26.1.2-2.1.jar",
+        "${rootDir}/libs/MekanismAdditions-Version-Locked-26.1.2-1.0.jar",
+        "${rootDir}/libs/MekanismGenerators-Version-Locked-26.1.2-1.0.jar",
+        "${rootDir}/libs/MekanismTools-Version-Locked-26.1.2-1.0.jar"
+    )
+    compileOnly(mekanismJars)
+    localRuntime(mekanismJars)
+
+    compileOnly(forge.mekanismcovers)
+    compileOnly(forge.evolvedmekanism)
+
+    compileOnly(files("${rootDir}/libs/mekmm-26.1.2-2.0.0-SNAPSHOT+20260811-061555-eb4caf5.jar"))
+
+    compileOnly(forge.ae2)
+    compileOnly(forge.guideme)
+    // Crt
+    compileOnly(forge.crt)
+
+    // mysticalAgriculture
+    compileOnly(forge.mysticalagriculture)
+
+    // CC: Tweaked
+    compileOnly(forge.cc.tweaked.core.api)
+    compileOnly(forge.cc.tweaked.forge.api)
+
+    // WAILA-likes
+    compileOnly(forge.jade)
+
+    // Standard runtime mods //
+    if (!atm11Smoke) localRuntime(forge.jade)
+    if (!atm11Smoke) localRuntime(forge.modernfix)
+    if (!atm11Smoke) localRuntime(forge.ferritecore)
+
+    if (!atm11Smoke) localRuntime(forge.mekanismcovers)
+    if (!atm11Smoke) localRuntime(forge.igleelibrary)
+    if (!atm11Smoke) localRuntime(forge.evolvedmekanism)
+
+    if (!providers.gradleProperty("atm11NoMM").isPresent()) {
+        localRuntime(files("${rootDir}/libs/mekmm-26.1.2-2.0.0-SNAPSHOT+20260811-061555-eb4caf5.jar"))
+    }
+
+
+    if (!atm11Smoke) localRuntime(forge.guideme)
+    if (!atm11Smoke) localRuntime(forge.ae2)
+
+    // Crt
+    if (!atm11Smoke) localRuntime(forge.crt)
+
+    // mysticalAgriculture
+    if (!atm11Smoke) localRuntime(forge.cucumber)
+    if (!atm11Smoke) localRuntime(forge.mysticalagriculture)
+
+    // Runtime Recipe Viewers - uncomment whichever one you want to use //
+//    modLocalRuntime(forge.jer)
+//    modLocalRuntime(forge.emi)
+    localRuntime(files("${rootDir}/libs/jei-26.1.2-neoforge-29.37.0.99.jar"))
+
+    // Client-only runtime mods //
+    if (!atm11Smoke) clientLocalRuntime(forge.sodium)
+    if (!atm11Smoke) clientLocalRuntime(forge.iris)
+    if (providers.gradleProperty('atm11RenderSmoke').isPresent()) {
+        clientLocalRuntime(files("${rootDir}/libs/sodium-neoforge-0.9.2+mc26.1.2.jar"))
+        clientLocalRuntime(files("${rootDir}/libs/iris-neoforge-1.11.4+mc26.1.2.jar"))
+    }
+    if (!atm11Smoke) clientLocalRuntime(forge.modernui)
+
+    //////////////////////////////////////////////////////
+    // Runtime mods for dev testing with unclean client //
+    //////////////////////////////////////////////////////
+}
+

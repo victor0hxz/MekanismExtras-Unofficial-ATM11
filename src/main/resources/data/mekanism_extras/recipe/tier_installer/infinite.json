@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "#mekanism_extras:alloys/spectrum",
+    "C": "#c:circuits/infinite",
+    "I": "#c:pellets/plutonium",
+    "J": "#c:pellets/polonium",
+    "P": "#minecraft:planks"
+  },
+  "pattern": [
+    "ACA",
+    "IPJ",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism_extras:infinite_tier_installer"
+  }
+}

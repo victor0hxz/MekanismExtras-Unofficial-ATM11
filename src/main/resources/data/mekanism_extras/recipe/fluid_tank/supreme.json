@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": "#mekanism_extras:alloys/thermonuclear",
+    "I": "#c:ingots/iron",
+    "P": "mekanism_extras:absolute_fluid_tank"
+  },
+  "pattern": [
+    "AIA",
+    "IPI",
+    "AIA"
+  ],
+  "result": {
+    "id": "mekanism_extras:supreme_fluid_tank"
+  }
+}

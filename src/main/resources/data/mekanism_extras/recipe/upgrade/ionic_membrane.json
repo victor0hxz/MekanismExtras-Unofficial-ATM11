@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:hdpe_sheet",
+    "A": "#mekanism_extras:alloys/shining",
+    "G": "#c:glass_blocks/cheap"
+  },
+  "pattern": [
+    " G ",
+    "A#A",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism_extras:upgrade_ionic_membrane"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": {
+      "model": "mekanism_extras:block/transmitter/large/logistical_transporter/absolute",
+      "type": "mekanism:special/transmitter",
+      "glass": "mekanism:block/transmitter/large/logistical_transporter/transporter_glass"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "mekanism_extras:block/transmitter/large/mechanical_pipe/cosmic",
+      "type": "mekanism:special/transmitter"
+    }
+  }
+}
