@@ -1,5 +1,5 @@
 {
-  "name": "Mekanism Extras - Unofficial ATM11 Compatibility Port",
+  "name": "Mekanism Extras Version Locked",
   "summary": "Unofficial fan compatibility adaptation of Mekanism Extras for Minecraft 26.1.2 and ATM11 0.9.0.",
   "game": "Minecraft",
   "class": "Mods",
@@ -31,8 +31,28 @@
   "fileId": 9105089,
   "fileUrl": "https://www.curseforge.com/minecraft/mc-mods/mekanism-extras-unofficial-atm11-compatibility/files/9105089",
   "pendingRelations": [],
-  "profileLogoStatus": "Version Locked PNG published on GitHub; native CurseForge logo replacement not confirmed",
+  "profileLogoStatus": "New Version Locked profile icon confirmed in author dashboard",
   "curseforgeModerationStatus": "Under Review",
   "curseforgeDescriptionStatus": "Exact Version Locked Markdown saved and verified",
-  "curseforgeSourceStatus": "GitHub source URL saved and verified"
+  "curseforgeSourceStatus": "GitHub source URL saved and verified",
+  "projectStatusAtAudit": "Approved",
+  "fileStatusAtAudit": "Approved",
+  "bannerUrl": "https://raw.githubusercontent.com/victor0hxz/MekanismExtras-Version-Locked/main/publication/BANNER-VERSION-LOCKED.png",
+  "bannerDimensions": [
+    1983,
+    793
+  ],
+  "bannerDisplayWidth": "100%",
+  "curseforgeBannerStatus": "Full-width horizontal banner saved and verified",
+  "bannerGenerationManifest": "version-locked-banner-art.json",
+  "categoryDesired": {
+    "main": "Technology",
+    "additional": [
+      "Addons",
+      "Energy",
+      "Processing"
+    ]
+  },
+  "categoryStatus": "pending; TinyFish wallet insufficient",
+  "requiredDependencyCorrection": null
 }
