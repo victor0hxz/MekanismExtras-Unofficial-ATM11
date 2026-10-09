@@ -1,0 +1,18 @@
+{
+  "displayName": "mekanism_extras-26.1.2-1.4.2-fix3-atm11-0.9.0.jar",
+  "changelog": "Initial unofficial fan compatibility build for ATM11 0.9.0 and Minecraft 26.1.2.\n\nAdds higher-tier factories, transmitters and other Mekanism extensions. FIX3 includes modern transfer capability fixes, transmitter inventory model fixes, JEI factory catalysts and optional MoreMachine/AE2 recipe compatibility.\n\nValidated in isolated client/server worlds. Full-pack gameplay testing remains necessary.\n",
+  "changelogType": "markdown",
+  "releaseType": "beta",
+  "relations": {
+    "projects": [
+      {
+        "type": "requiredDependency",
+        "slug": "mekanism-version-locked"
+      },
+      {
+        "type": "optionalDependency",
+        "slug": "mekanism-more-machine"
+      }
+    ]
+  }
+}
