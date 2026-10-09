@@ -1,0 +1,31 @@
+{
+  "name": "Mekanism Extras - Unofficial ATM11 Compatibility Port",
+  "summary": "Unofficial fan compatibility adaptation of Mekanism Extras for Minecraft 26.1.2 and ATM11 0.9.0.",
+  "game": "Minecraft",
+  "class": "Mods",
+  "mainCategory": "Technology",
+  "additionalCategories": [
+    "Addons"
+  ],
+  "license": "MIT",
+  "sourceUrl": "https://github.com/victor0hxz/MekanismExtras-Unofficial-ATM11",
+  "issuesUrl": "https://github.com/victor0hxz/MekanismExtras-Unofficial-ATM11/issues",
+  "releaseType": "beta",
+  "gameVersions": [
+    "26.1.2"
+  ],
+  "modLoader": "NeoForge",
+  "javaVersion": 25,
+  "dependenciesNotes": "Mekanism Version Locked 2.1 and its matching modules. Optional: JEI 29.37.0.99, MoreMachine and AE2",
+  "upstream": "https://github.com/lostmyself8/Mekanism-Extras",
+  "originalAuthors": "lostmyself8 / Mekanism Extras contributors",
+  "jar": "mekanism_extras-26.1.2-1.4.2-fix3-atm11-0.9.0.jar",
+  "sha256": "46bdeb599f4f677053fca41300204b3baa6b8382bc419d66f1fc683dc1c272a5",
+  "status": "Created; portal status New; file uploads not yet verified",
+  "packagingNotes": "Original MIT license embedded in META-INF for standalone CurseForge distribution; production bytecode unchanged from tested GitHub build.",
+  "projectId": 1734579,
+  "slug": "mekanism-extras-unofficial-atm11-compatibility",
+  "curseforgeUrl": "https://www.curseforge.com/minecraft/mc-mods/mekanism-extras-unofficial-atm11-compatibility",
+  "publicationTitle": "Mekanism Extras: Version Locked",
+  "logoSubtitle": "VERSION LOCKED"
+}
