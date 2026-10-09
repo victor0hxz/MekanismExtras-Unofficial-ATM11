@@ -68,10 +68,6 @@ Thank you to lostmyself8 / Mekanism Extras contributors for the original project
 
 ## Build and port documentation
 
----
-
-## Build and port documentation
-
 # Mekanism Extras - Unofficial ATM11 Compatibility Port
 
 Unofficial fan-maintained adaptation by victor0hxz for **ATM11 0.9.0 / Minecraft 26.1.2 / NeoForge 26.1.2.109 / Java 25**. This project is not affiliated with or endorsed by the original authors or the ATM team.
