@@ -83,3 +83,7 @@ sourceSets.test.compileClasspath += sourceSets.main.compileClasspath
 
 if (!providers.gradleProperty("jemmSmoke").isPresent()) sourceSets.test.java.exclude("**/TransmitterVisualSmoke.java")
 if (!providers.gradleProperty("addonSmoke").isPresent()) sourceSets.test.java.exclude("**/AddonVisualSmoke.java")
+if (!providers.gradleProperty("reactorSmoke").isPresent()) sourceSets.test.java.exclude("**/ReactorFunctionalSmoke.java")
+if (!providers.gradleProperty("guideClientSmoke").isPresent()) sourceSets.test.java.exclude("**/GuideClientSmoke.java")
+// These fixtures execute inside Minecraft, rather than as JUnit tests.
+tasks.withType(Test).configureEach { failOnNoDiscoveredTests = false }

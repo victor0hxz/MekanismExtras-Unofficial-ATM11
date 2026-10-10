@@ -36,6 +36,7 @@ neoForge {
             ideName = "Client"
 
             gameDirectory.set(file('run/Client'))
+            if (providers.gradleProperty('guideClientSmoke').isPresent()) systemProperty 'mekextras.guideClientSmoke', 'true'
             if (providers.gradleProperty('visualSmoke').isPresent()) {
                 systemProperty 'mekextras.visualSmoke', 'true'
                 systemProperty 'mekextras.inventorySmoke', 'true'
@@ -53,6 +54,8 @@ neoForge {
             gameDirectory.set(file('run/server'))
             programArguments.addAll('--nogui', '--world', 'world-extra')
             systemProperty('neoforge.enabledGameTestNamespaces', project.mod_id)
+            if (providers.gradleProperty('heaterSmoke').isPresent()) systemProperty 'mekextras.heaterSmoke', 'true'
+            if (providers.gradleProperty('reactorSmoke').isPresent()) systemProperty 'mekextras.reactorSmoke', 'true'
         }
 
         gameTestServer {

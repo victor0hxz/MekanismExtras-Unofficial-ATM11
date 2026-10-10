@@ -12,7 +12,7 @@ dependencies {
 
     // ATM11 Mekanism 26.1.2 local version-locked modules
     def mekanismJars = files(
-        "${rootDir}/libs/Mekanism-Version-Locked-26.1.2-2.1.jar",
+        providers.gradleProperty('mekanismBaseJar').getOrElse("${rootDir}/libs/Mekanism-Version-Locked-26.1.2-2.1.jar"),
         "${rootDir}/libs/MekanismAdditions-Version-Locked-26.1.2-1.0.jar",
         "${rootDir}/libs/MekanismGenerators-Version-Locked-26.1.2-1.0.jar",
         "${rootDir}/libs/MekanismTools-Version-Locked-26.1.2-1.0.jar"
@@ -82,4 +82,44 @@ dependencies {
     // Runtime mods for dev testing with unclean client //
     //////////////////////////////////////////////////////
 }
+
+if (providers.gradleProperty('addonSmoke').isPresent()) {
+ dependencies {
+  def addonJars = files(
+   'H:/Gradle/Mods/ExtraHostileNeuralNetworks-ATM11/build/libs/extrahnn-26.1.2-2.2.5-port1-atm11-0.9.0.jar',
+   'H:/Gradle/Mods/PipezOptimizer-ATM11/build/libs/pipez_optimizer-26.1.2-1.0.13-port1-atm11-0.9.0.jar',
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/build/libs/MultiBuilder-26.1-1.3.0-atm11-0.9.0.jar',
+   'H:/Gradle/Mods/ExtraHostileNeuralNetworks-ATM11/libs/HostileNeuralNetworks-26.1.2-7.0.0.jar',
+   'H:/Gradle/Mods/ExtraHostileNeuralNetworks-ATM11/libs/Placebo-26.1.2-10.0.2.jar',
+   'H:/Gradle/Mods/PipezOptimizer-ATM11/libs/pipez-neoforge-1.2.31+26.1.2.jar',
+   'H:/Gradle/Mods/PipezOptimizer-ATM11/libs/Jade-mc26.1-NeoForge-26.1.11.jar',
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/libs/appliedenergistics2-26.1.12-beta.jar',
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/libs/guideme-26.1.12-beta.jar')
+  compileOnly(addonJars)
+  testCompileOnly(addonJars)
+  localRuntime(addonJars)
+ }
+}
+
+if (providers.gradleProperty('jemmSmoke').isPresent()) {
+ dependencies {
+  def jemm=files('H:/Gradle/Mods/JustEnoughMekanismMultiblocks-ATM11/build/libs/JustEnoughMekanismMultiblocks-26.1.2-6.5-port3-atm11-0.9.0.jar')
+  compileOnly(jemm)
+  testCompileOnly(jemm)
+  localRuntime(jemm)
+ }
+}
+
+if (providers.gradleProperty('reactorSmoke').isPresent() || providers.gradleProperty('guideClientSmoke').isPresent()) {
+ dependencies {
+  def reactorTestJars = files(
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/build/libs/MultiBuilder-26.1-1.3.0-port2-atm11-0.9.0.jar',
+   'H:/Gradle/Mods/JustEnoughMekanismMultiblocks-ATM11/build/libs/JustEnoughMekanismMultiblocks-26.1.2-6.5-port3-atm11-0.9.0.jar',
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/libs/appliedenergistics2-26.1.12-beta.jar',
+   'H:/Gradle/Mods/MultiBuilderTool-ATM11/libs/guideme-26.1.12-beta.jar')
+  compileOnly(reactorTestJars)
+  localRuntime(reactorTestJars)
+ }
+}
+
 

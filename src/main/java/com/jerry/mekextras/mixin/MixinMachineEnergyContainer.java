@@ -50,6 +50,11 @@ public abstract class MixinMachineEnergyContainer<TILE extends TileEntityMekanis
 
     @Inject(method = "getEnergyPerTick", at = @At(value = "RETURN"), cancellable = true)
     public void mixinGetEnergyPerTick(CallbackInfoReturnable<Integer> cir) {
+        // Adjustable consumers use this value as useful work (not just an energy
+        // cost): the resistive heater converts it directly into heat.
+        if (((MachineEnergyContainer<?>) (Object) this).adjustableRates()) {
+            return;
+        }
         if (tile.supportsUpgrade(ExtraUpgrade.CREATIVE)) {
             cir.setReturnValue((tile.getComponent().getUpgrades(ExtraUpgrade.CREATIVE) > 0) ? 0 : currentEnergyPerTick);
         }
