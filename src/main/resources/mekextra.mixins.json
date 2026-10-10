@@ -21,7 +21,9 @@
     "MixinUpgradeUtils",
     "integration.mekaf.MixinAdvancedFactory",
     "integration.mekmm.MixinMoreMachineFactory",
-    "resource.ore.MixinOreType"
+    "resource.ore.MixinOreType",
+    "MixinHeatNetworkRecovery",
+    "MixinEvaporationHeatRecovery"
   ],
   "client": [
     "client.MixinMekanismRenderer",
@@ -33,5 +35,3 @@
     "maxShiftBy": 5
   }
 }
-
-

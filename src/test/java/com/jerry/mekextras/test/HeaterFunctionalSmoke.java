@@ -18,6 +18,10 @@ public class HeaterFunctionalSmoke {
         MekanismExtras.LOGGER.info("HEATER PASS: {}", label);
     }
 
+    private static void requireQuiet(boolean condition, String label) {
+        if (!condition) throw new AssertionError(label);
+    }
+
     @SubscribeEvent
     public static void started(ServerStartedEvent event) {
         if (!Boolean.getBoolean("mekextras.heaterSmoke")) return;
@@ -87,6 +91,65 @@ public class HeaterFunctionalSmoke {
             } catch (NoSuchFieldException ignored) {
                 // The fixture can also verify the unpatched Version Locked 2.1 binary.
             }
+            // A low consumption must never turn the creative energy buffer into heat.
+            heater.setEnergyUsageFromPacket(1);
+            heater.getHeatCapacitor(null).setHeat(100 * mekanism.api.heat.HeatAPI.AMBIENT_TEMP, null);
+            receiver.getHeatCapacitor(null).setHeat(100 * mekanism.api.heat.HeatAPI.AMBIENT_TEMP, null);
+            double efficiency = mekanism.common.config.MekanismConfig.general.resistiveHeaterEfficiency.get();
+            double expectedMaximum = mekanism.api.heat.HeatAPI.AMBIENT_TEMP + 1000 * efficiency / 100;
+            for (int tick = 0; tick < 1000; tick++) {
+                TileEntityMekanism.tickServer(level, pos, level.getBlockState(pos), heater);
+                TileEntityMekanism.tickServer(level, receiverPos, level.getBlockState(receiverPos), receiver);
+                requireQuiet(heater.getEnergyUsed() == 1, "low usage is exactly 1 FE/tick");
+                requireQuiet(Double.isFinite(heater.getTemperature()) && heater.getTemperature() <= expectedMaximum,
+                    "heat stays within the energy actually consumed");
+            }
+            MekanismExtras.LOGGER.info("HEATER LOW-POWER RESULT: temperature={}, efficiency={}, bound={}",
+                heater.getTemperature(), efficiency, expectedMaximum);
+            require(heater.getTemperature() < expectedMaximum, "1000 creative ticks at 1 FE/tick cannot create unbounded heat");
+            // Reproduce the affected world's enormous saved heat, rather than resetting it away.
+            heater.getHeatCapacitor(null).setHeat(1.0E25, null);
+            TileEntityMekanism.tickServer(level, pos, level.getBlockState(pos), heater);
+            require(heater.getTemperature() < 1000, "corrupted heater is repaired before heat transfer");
+            require(receiver.getTemperature() < 1000, "corrupted heat is not passed to its neighbor");
+            var evaporationOrigin = new BlockPos(16, 120, 0);
+            var evaporationPos = evaporationOrigin.offset(1, 1, 0);
+            for (int x=0; x<4; x++) for (int y=0; y<4; y++) for (int z=0; z<4; z++) {
+                boolean casing = y==0 || x==0 || x==3 || z==0 || z==3;
+                var plantPos = evaporationOrigin.offset(x,y,z);
+                level.setBlockAndUpdate(plantPos, casing ? MekanismBlocks.THERMAL_EVAPORATION_BLOCK.get().defaultBlockState()
+                    : net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+            }
+            level.setBlockAndUpdate(evaporationPos, MekanismBlocks.THERMAL_EVAPORATION_CONTROLLER.get().defaultBlockState());
+            for (int tick=0; tick<100; tick++) {
+                ((net.minecraft.world.level.storage.ServerLevelData) level.getLevelData()).setGameTime(level.getGameTime()+1);
+                for (int x=0; x<4; x++) for (int y=0; y<4; y++) for (int z=0; z<4; z++) {
+                    var plantPos = evaporationOrigin.offset(x,y,z);
+                    if (level.getBlockEntity(plantPos) instanceof TileEntityMekanism tile)
+                        TileEntityMekanism.tickServer(level, plantPos, level.getBlockState(plantPos), tile);
+                }
+            }
+            var evaporation = (mekanism.common.tile.multiblock.TileEntityThermalEvaporationController) level.getBlockEntity(evaporationPos);
+            require(evaporation.getMultiblock().isFormed(), "evaporation test plant is a real formed multiblock");
+            var plantHeat = evaporation.getMultiblock().getHeatCapacitor();
+            plantHeat.setHeat(1.0E25, null);
+            evaporation.getMultiblock().tick(level);
+            require(plantHeat.getTemperature() < 1000, "thermal evaporation's corrupted heat is repaired");
+            var conductorPos = new BlockPos(10, 120, 0);
+            level.setBlockAndUpdate(conductorPos, MekanismBlocks.BASIC_THERMODYNAMIC_CONDUCTOR.get().defaultBlockState());
+            var conductorTile = (mekanism.common.tile.transmitter.TileEntityThermodynamicConductor) level.getBlockEntity(conductorPos);
+            var conductor = conductorTile.getTransmitter();
+            conductor.getHeatCapacitor(null).setHeatAndCapacity(1.0E25, 1.0E25, null);
+            var network = new mekanism.common.content.network.HeatNetwork(java.util.UUID.randomUUID());
+            network.addTransmitter(conductor);
+            network.onUpdate();
+            require(conductor.getTemperature() < 1000, "heat network recovers corrupt conductors before transfer");
+            require(conductor.getHeatCapacitor(null).getHeatCapacity() == conductor.getTier().getHeatCapacity(),
+                "heat network restores legacy conductor capacity before transfer");
+            heater.getHeatCapacitor(null).setHeat(1.0E10 * 100, null);
+            require(!com.jerry.mekextras.common.util.HeatStateRepair.recover(heater.getHeatCapacitor(null), "valid high-power fixture"),
+                "legitimate high-power temperatures are preserved");
+            require(heater.getTemperature() == 1.0E10, "repair does not cap normal thermal output");
             MekanismExtras.LOGGER.info("HEATER FUNCTIONAL COMPLETE");
         } catch (Throwable error) {
             MekanismExtras.LOGGER.error("HEATER FUNCTIONAL FAILED", error);
